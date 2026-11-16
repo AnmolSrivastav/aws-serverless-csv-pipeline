@@ -1,0 +1,11 @@
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3,sqs,lambda,dynamodb,iam,logs
+      - LOCALSTACK_AUTH_TOKEN=ls-bodOmoxo-8662-6728-JajI-HiGeDolI065c
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
